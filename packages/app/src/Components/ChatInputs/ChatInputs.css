@@ -1,0 +1,17 @@
+.inputs-container > * {
+  border: 1px solid var(--color-faded);
+  border-bottom: none;
+}
+
+.inputs-container:last-child {
+  border-bottom: 1px solid var(--color-faded);
+}
+
+.inputs-container button {
+  background: none;
+  border: none;
+}
+
+.inputs-container button * {
+  pointer-events: none;
+}

@@ -1,0 +1,9 @@
+.message-user {
+  font-size: var(--text-size-username);
+  font-weight: 700;
+}
+
+.message-time {
+  font-size: var(--text-size-meta);
+  color: var(--text-secondary);
+}

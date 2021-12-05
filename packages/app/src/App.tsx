@@ -1,16 +1,18 @@
-import React from "react";
 import "./App.css";
 
+import { SocketProvider } from "./Context/socket";
+
+import Chat from "./Components/Chat";
+import ChatInputs from "./Components/ChatInputs";
+
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src="/images/logo.png" className="App-logo" alt="logo" />
-        <p>Welcome to the Introvoke Frontend Interview Project! 👋</p>
-        <p>
-          Checkout the <code>README.md</code> file to get started.
-        </p>
-      </header>
+    <div className="App flex flex-col">
+      <SocketProvider>
+        <Chat />
+        <ChatInputs />
+      </SocketProvider>
     </div>
   );
 }
