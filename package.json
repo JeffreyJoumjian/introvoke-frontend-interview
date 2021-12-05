@@ -17,5 +17,7 @@
   "devDependencies": {
     "lerna": "^4.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "date-fns": "^2.27.0"
+  }
 }

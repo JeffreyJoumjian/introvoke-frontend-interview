@@ -1,4 +1,4 @@
-import * as APITypes from '../types';
+import * as APITypes from '../@types';
 
 const APIController = {
 	getAllMessages: async (): Promise<APITypes.Message[] | undefined> => {

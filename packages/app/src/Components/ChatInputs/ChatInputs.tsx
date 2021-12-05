@@ -1,11 +1,11 @@
 import React, { useState, useRef } from 'react';
 import { Send as SendIcon } from 'react-ionicons'
 
-import { onChangeHandler } from '../../types';
+import { onChangeHandler } from '../../@types';
 import { APIController } from '../../utils/APIController';
 
 import './ChatInputs.css';
-import * as APITypes from '../../types';
+import * as APITypes from '../../@types';
 
 const ChatInputs: React.FC = () => {
 
@@ -46,6 +46,8 @@ const ChatInputs: React.FC = () => {
 
 	}
 
+	const { message, username } = state;
+	const isDisabled = !(message && username);
 
 	return (
 		<div className="inputs-container">
@@ -69,12 +71,13 @@ const ChatInputs: React.FC = () => {
 					data-testid="inp-message"
 				/>
 				<button
+					disabled={isDisabled}
 					data-testid="btn-send"
 					className="mx-1"
 					onClick={onSendHandler}
 				>
 					<SendIcon
-						color={'#00b3ff'}
+						color={isDisabled ? '#b1b1b1' : '#00b3ff'}
 						height="24px"
 						width="24px"
 					/>

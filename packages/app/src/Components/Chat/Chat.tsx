@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef, useCallback, useReducer } from 'rea
 import { useSocket } from '../../Context/socket';
 
 import { APIController } from "../../utils/APIController";
-import * as APITypes from '../../types';
+import * as APITypes from '../../@types';
 
 import Message from "./Message";
 
@@ -34,7 +34,7 @@ const Chat: React.FC = () => {
 			socket.off('message-created');
 		}
 
-	}, [messages, scrollIntoView]);
+	}, [socket, messages, scrollIntoView]);
 
 
 	// get initial messages from server
@@ -50,7 +50,7 @@ const Chat: React.FC = () => {
 		getMessagesFromServer();
 	}, []);
 
-	// rerender every 1-5 minutes to see the time changes
+	// rerender every 1 minute to see the time changes
 	useEffect(() => {
 		let interval: NodeJS.Timeout;
 

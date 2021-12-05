@@ -1,6 +1,6 @@
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
-function getTimeSince(createdTime) {
+function getTimeSince(createdTime: number) {
 	let result = formatDistanceToNow(createdTime, {
 		addSuffix: true
 	});
